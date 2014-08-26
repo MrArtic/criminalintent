@@ -1,5 +1,7 @@
 package criminalintent.jenske.net.criminalintent;
 
+import android.text.format.DateFormat;
+
 import java.util.Date;
 import java.util.UUID;
 
@@ -11,11 +13,16 @@ public class Crime {
     private String mTitle;
     private Date mDate;
     private boolean mSolved;
+    private DateFormat mDateFormat;
+
+
 
     public Crime(){
         // Generate unique identifier
         mId = UUID.randomUUID();
+
         mDate = new Date();
+        mDateFormat = new DateFormat();
     }
 
 
@@ -48,5 +55,9 @@ public class Crime {
 
     public void setSolved(boolean solved) {
         mSolved = solved;
+    }
+
+    public DateFormat getDateFormat() {
+        return mDateFormat;
     }
 }
